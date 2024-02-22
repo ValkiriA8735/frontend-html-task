@@ -6,7 +6,11 @@
 
 ## Задание
 
-Сверстать компонент `/src/components/Sidebar.jsx` по дизайну ([Анимированная версия](src/assets/design.mp4))
+Сверстать компонент `/src/components/Sidebar.jsx` по дизайну
+
+[Анимированная версия](src/assets/design.mp4)
+
+[Оригинал](https://dribbble.com/shots/18111119-Collapsing-Sidebar-Navigation-Light-and-Dark-mode)
 
 ![design.png](src/assets/design.png)
 
