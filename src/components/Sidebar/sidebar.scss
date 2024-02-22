@@ -1,0 +1,85 @@
+.sidebar {
+    position: relative;
+    width: 240px;
+    height: 100vh;
+    background-color: #413f3f;
+    border-right: 1px solid #ccc;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+
+    &.opened {
+        width: 85px;
+         }
+
+    .sidebar-header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+
+        .logo-container{
+        display: flex;
+        align-items: center;
+        }
+
+        .logo_img img{
+            width: 30px;
+            height: 30px;
+            margin: 15px;
+        }
+    
+        .brand {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .toggle-button {
+            position: absolute;
+            right: 0;
+            background: rgb(157, 157, 157);
+            border-radius: 50px 0 0 50px;
+            width: 20px;
+            height: 30px;
+            cursor: pointer;
+        }
+    }
+}
+.menu_bar, 
+.menu_setting-support {
+    padding: 15px;
+    cursor: pointer;
+
+    .menu_item {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+
+       span:hover {
+            color: #15a779;
+        }
+
+       span:active {
+            color: #2a4a40;
+        }
+
+
+       .icon_title, 
+        .setting_support {
+            display: inline-block;
+            padding-right: 20px;
+        }
+    }
+
+    .menu_title {
+        display: block;
+             }
+}
+  
+.menu_setting-support {
+    padding: 15px ;
+    margin: 100px 0;
+
+    .icon_support {
+        padding-top: 15px;
+    }
+}

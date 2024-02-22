@@ -41,37 +41,38 @@ export default class Sidebar extends React.Component {
 
         return (
             <div className={ containerClassnames }>
-                <div>
-                    <img
-                        src={ logo }
-                        alt="TensorFlow logo"
-                    />
-                    <span>TensorFlow</span>
-                    <button onClick={ this.toggleSidebar }>
-                        <FontAwesomeIcon icon={ isOpened ? 'angle-left' : 'angle-right' } />
+                <div className='sidebar-header'>
+                    <div className="logo-container" onClick={this.toggleSidebar}>
+                        <div className="logo_img">
+                            <img src={logo} alt="TensorFlow logo" />
+                        </div>
+
+            {/* Текст логотипа */}
+                    <span className="brand">TensorFlow</span>
+                    </div>
+        
+                    {/* Кнопка переключения боковой панели */}
+                    <button className="toggle-button" onClick={this.toggleSidebar}>
+                    <FontAwesomeIcon icon={isOpened ? 'angle-right'  : 'angle-left'} />
                     </button>
                 </div>
 
-                <div>
-                    {
-                        routes.map((route) => (
-                            <div key={ route.title } onClick={ () => this.goToRoute(route.path) }>
-                                <FontAwesomeIcon icon={ route.icon } />
-                                <span>{ route.title }</span>
-                            </div>
-                        ))
-                    }
-                </div>
+        <div className='menu_bar'>
+           {routes.map((route) => (
+             <div className={`menu_item ${isOpened ? 'with_title' : ''}`} key={ route.title } onClick={ () => this.goToRoute(route.path) }>
+                <FontAwesomeIcon className='icon_title' icon={ route.icon } />
+                {!isOpened && <span>{ route.title }</span>}
+            </div>
+            ))}
+        </div>
 
-                <div>
-                    {
-                        bottomRoutes.map((route) => (
-                            <div key={ route.title } onClick={ () => this.goToRoute(route.path) }>
-                                <FontAwesomeIcon icon={ route.icon } />
-                                <span>{ route.title }</span>
-                            </div>
-                        ))
-                    }
+                <div className='menu_setting-support'>
+                    {bottomRoutes.map((route) => (
+                             <div className={`menu_item ${isOpened ? 'with_title' : ''}`} key={ route.title } onClick={ () => this.goToRoute(route.path) }>
+                             <FontAwesomeIcon className='setting_support' icon={ route.icon } />
+                             {!isOpened && <span>{ route.title }</span>}
+                         </div>
+                        ))}
                 </div>
             </div>
         );
